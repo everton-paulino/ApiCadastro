@@ -10,7 +10,7 @@ namespace Cadastro.Domain
     {
         public string CompleteName { get; set; }
         public string Function { get; set; }
-        public string ession { get; set; }
+        public string Session { get; set; }
         public Company? Company { get; set; }
     }
 }

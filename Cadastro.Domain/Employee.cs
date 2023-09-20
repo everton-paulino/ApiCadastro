@@ -20,7 +20,7 @@ namespace Cadastro.Domain
         public bool IsActive { get; set; }
         public string CompleteName { get; set; }
         public string Function { get; set; }
-        public string session { get; set; }
+        public string Session { get; set; }
         public Company Company { get; set; }
     }
 }
