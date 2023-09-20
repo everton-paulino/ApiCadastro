@@ -2,8 +2,8 @@
 
 namespace Cadastro.Domain
 {
-    public class Employee
-    {
+    [BsonIgnoreExtraElements]
+    public class Employee    {
         
         public Employee()
         {

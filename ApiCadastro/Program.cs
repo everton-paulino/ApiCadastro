@@ -1,4 +1,15 @@
+using Cadasatro.Core;
+using Cadasatro.Core.Interface;
+using Cadastro.Core;
+using Cadastro.Repository;
+using Cadastro.Repository.Interface;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddSingleton<ICompanyService , CompanyService>();
+builder.Services.AddSingleton<IEmployeeService, EmployeService>();
+builder.Services.AddSingleton<ICompanyRepository, CompanyRepository>();
+builder.Services.AddSingleton<IEmployeeRepository, EmployeeRepository>();
 
 // Add services to the container.
 
