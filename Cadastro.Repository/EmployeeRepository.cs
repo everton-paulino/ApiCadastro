@@ -19,14 +19,14 @@ namespace Cadastro.Repository
             _collectionEmployee = database.GetCollection<Employee>("Employee");
 
         }
-        public Employee CreateCompany(Employee employee)
+        public Employee CreateEmployee(Employee employee)
         {
             _collectionEmployee.InsertOne(employee);
 
             return employee;
         }
 
-        public string DeleteCompany(string employeeKey)
+        public string DeleteEmployee(string employeeKey)
         {
             var employee = _collectionEmployee.DeleteOneAsync(x => x.Key == employeeKey);
 
@@ -40,14 +40,14 @@ namespace Cadastro.Repository
             return employees;
         }
 
-        public Employee GetCompanyByKey(string employeeKey)
+        public Employee GetEmployeeByKey(string employeeKey)
         {
             var employee = _collectionEmployee.Find(p =>  p.Key == employeeKey).FirstOrDefault();
 
             return employee;
         }
 
-        public Employee UpdateCompany(Employee employee)
+        public Employee UpdateEmployee(Employee employee)
         {
             _collectionEmployee.ReplaceOneAsync(c => c.Key == employee.Key, employee);
 

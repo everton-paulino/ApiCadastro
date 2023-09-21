@@ -29,7 +29,7 @@ namespace ApiCadastro.Controllers
             employeeCreate.Session = employee.Session;
             employeeCreate.Company = employee.Company;
 
-            var employeeResponse = _employeeService.CreateCompany(employeeCreate);
+            var employeeResponse = _employeeService.CreateEmployee(employeeCreate);
 
             return Ok(employeeCreate);
         }
@@ -45,7 +45,7 @@ namespace ApiCadastro.Controllers
         [HttpGet("{key}")]
         public  IActionResult GetByKey([FromRoute] string key)
         {
-            var employee = _employeeService.GetCompanyByKey(key);
+            var employee = _employeeService.GetEmployeeByKey(key);
 
             if (employee is null)
             {
@@ -58,7 +58,7 @@ namespace ApiCadastro.Controllers
         [HttpPut("{key}")]
         public IActionResult Put(string key, [FromBody] EmployeeUpdate employeeUpdate)
         {
-            var employee = _employeeService.GetCompanyByKey(key);
+            var employee = _employeeService.GetEmployeeByKey(key);
 
             if (employee is null)
             {
@@ -72,7 +72,7 @@ namespace ApiCadastro.Controllers
             employee.Session = employeeUpdate.Session;
             employeeUpdate.Company = employeeUpdate.Company;
 
-            var employeeResponse = _employeeService.UpdateCompany(employee);
+            var employeeResponse = _employeeService.UpdateEmployee(employee);
 
             return Ok(employeeResponse);
         }
@@ -80,14 +80,14 @@ namespace ApiCadastro.Controllers
         [HttpDelete("{key}")]
         public IActionResult Delete(string key)
         {
-            var employee = _employeeService.GetCompanyByKey(key);
+            var employee = _employeeService.GetEmployeeByKey(key);
 
             if (employee is null)
             {
                 return NotFound();
             }
 
-            var employeeresponse = _employeeService.DeleteCompany(key);
+            var employeeresponse = _employeeService.DeleteEmployee(key);
 
             return NoContent();
 

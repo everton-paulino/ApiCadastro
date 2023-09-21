@@ -9,10 +9,10 @@ namespace Cadasatro.Core.Interface
 {
     public interface IEmployeeService
     {
-        Employee CreateCompany(Employee employee);
-        Employee UpdateCompany(Employee employee);
-        string DeleteCompany(string employeeKey);
-        Employee GetCompanyByKey(string employeeKey);
+        Employee CreateEmployee(Employee employee);
+        Employee UpdateEmployee(Employee employee);
+        string DeleteEmployee(string employeeKey);
+        Employee GetEmployeeByKey(string employeeKey);
         List<Employee> GetAll();
     }
 }
