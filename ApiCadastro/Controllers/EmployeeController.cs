@@ -70,7 +70,7 @@ namespace ApiCadastro.Controllers
             employee.Function = employeeUpdate.Function;
             employee.CompleteName = employeeUpdate.CompleteName;
             employee.Session = employeeUpdate.Session;
-            employeeUpdate.Company = employeeUpdate.Company;
+            employee.Company = employeeUpdate.Company;
 
             var employeeResponse = _employeeService.UpdateEmployee(employee);
 
